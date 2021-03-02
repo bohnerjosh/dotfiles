@@ -1,5 +1,6 @@
 #!/bin/bash
 
+echo "compiling $1.cpp..."
 if [[ -e $1.cpp  ]]
 then
 	g++ $1.cpp -o $1 && ./$1
