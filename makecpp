@@ -1,0 +1,20 @@
+#!/bin/bash
+
+touch $1.cpp
+line1="#include <iostream>"
+line2="using namespace std;"
+line3=""
+line4="int main() {"
+line5=""
+line6="   cout << 'h' << endl;"
+line7="}"
+
+echo $line1 >> $1.cpp
+echo $line2 >> $1.cpp
+echo $line3 >> $1.cpp
+echo $line4 >> $1.cpp
+echo $line5 >> $1.cpp
+echo "${line6}" >> $1.cpp
+echo $line7 >> $1.cpp
+echo "Made $1.cpp & compiled: "
+g++ $1.cpp -o $1 && ./$1
