@@ -16,5 +16,5 @@ pip install requests==2.25.1
 pip install pytest
 
 echo "------------------------------"
-echo "'env'" created. You can now:"
+echo "'env' created. You can now:"
 echo "source .env"
