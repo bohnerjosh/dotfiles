@@ -6,5 +6,3 @@ else
     echo "$0: Usage: pss <ID> - where ID is the username or process you are looking for"
 fi
 
-
-
