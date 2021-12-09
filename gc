@@ -1,4 +1,4 @@
-$!/usr/bin/bash
+#!/usr/bin/bash
 echo "Compiling $1.c..."
 if [[ -e $1.c ]]
 then
