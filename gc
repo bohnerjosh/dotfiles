@@ -1,4 +1,5 @@
 #!/usr/bin/bash
+<<<<<<< HEAD
 echo "Compiling..."
 if [[ $# == 2 ]]
 then
