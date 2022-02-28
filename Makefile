@@ -1,6 +1,6 @@
 SHELL=/bin/bash
 
-SCRIPTFILES = g makecpp makehtml makejava makeenv flaskmake flaskrun pss
+SCRIPTFILES = g gc makecpp makehtml makejava makeenv flaskmake flaskrun pss
 HOMEFILES = .vimrc
 
 link: $(SCRIPTFILES) $(HOMEFILES)
