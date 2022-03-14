@@ -5,7 +5,7 @@ To use:
 `git clone https://github.com/bohnerjosh/dotfiles ~/.dotfiles`
 `cd ~/.dotfiles && make`
 
-# Instructions
+# Instructions for authenticating git
 
 1. clone repository 
 2. Run commands:
