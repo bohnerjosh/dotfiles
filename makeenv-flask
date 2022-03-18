@@ -5,10 +5,16 @@ virtualenv -p python3 env
 if [[ ! -e .env ]]; then
 cat >.env <<ENV_EOF
 source env/bin/activate
+export FLASK_PORT=8324
+export FLASK_ENV=development
 ENV_EOF
 fi
 
 source .env
+pip install flask==1.1.2
+pip install Flask-SQLAlchemy==2.4.4
+pip install SQLAlchemy==1.3.23
+pip install requests==2.25.1
 pip install pytest
 
 echo "------------------------------"
