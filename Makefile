@@ -1,10 +1,9 @@
 SHELL=/usr/bin/bash
 
-SCRIPTFILES = g gc makecpp makehtml makejava makeenv flaskmake flaskrun pss
+SCRIPTFILES = g gc makecpp makehtml makejava makeenv makeenv-flask flaskmake flaskrun pss
 HOMEFILES = .vimrc
 
 scripts: $(SCRIPTFILES) $(HOMEFILES)
-	mkdir ~/bin
 	for i in $?; do \
 		rm -f ~/bin/$${i}; \
 		ln -s ~/.dotfiles/$${i} ~/bin/$${i}; \
