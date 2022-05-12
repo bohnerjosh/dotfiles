@@ -10,4 +10,3 @@ git config --global credential.helper store
 4. Enter github credentials (access token)
 5. Run command:
 git config --global credential.helper store
-
