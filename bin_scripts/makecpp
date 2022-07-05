@@ -1,0 +1,19 @@
+#!/bin/bash
+
+if [[ $# -ne 1 ]]; then
+    echo "Usage: $0 <filename>"
+    exit 1
+fi
+cat >$1.cpp <<EOF
+#include <iostream>
+using namespace std;
+
+int main() {
+
+
+    cout << "hello world!" << endl;
+
+}
+EOF
+echo "Made $1.cpp & compiled: "
+g++ $1.cpp -o $1 && ./$1

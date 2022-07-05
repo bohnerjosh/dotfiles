@@ -1,0 +1,7 @@
+#!/usr/bin/bash
+
+if [[ $1 == "kay" ]]; then
+    ssh bohnjos@10.92.21.15
+else
+    echo "No server specified. Exiting."
+fi
