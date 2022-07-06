@@ -1,4 +1,4 @@
-# mae/usr/bin/bash
+#!/usr/bin/bash
 
 echo "Paste your SSH Private key for github here"
 echo "(Note: This is NOT your OpenSSH Private key): "
