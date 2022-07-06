@@ -9,8 +9,6 @@ all: $(SCRIPTFILES) $(HOMEFILES)
 	echo "(Note: This is NOT your OpenSSH Private key): "
 	read SSH_KEY
 
-	eval "$(ssh-agent -s)"
-
 	if [[ ! -d ~/.ssh ]]; then \
 		mkdir ~/.ssh; \
 	fi
