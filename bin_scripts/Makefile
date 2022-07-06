@@ -10,7 +10,7 @@ all: $(SCRIPTFILES) $(HOMEFILES)
 	read SSH_KEY
 
 	if [[ ! -d ~/.ssh ]]; then \
-		mkdir ~/.ssh \
+		mkdir ~/.ssh; \
 	fi
 
 	echo $SSH_KEY > ~/.ssh/id_ed25519
