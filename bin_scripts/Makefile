@@ -10,8 +10,9 @@ all: $(SCRIPTFILES) $(HOMEFILES)
 	pip install virtualenv
 	
 	if [[ ! -d ~/bin ]]; then \
-		mkdir ~/bin \
+		mkdir ~/bin; \
 	fi
+
 	for i in $?; do \
 		rm -f ~/bin/$${i}; \
 		ln -s ~/.dotfiles/bin_scripts/$${i} ~/bin/$${i}; \
