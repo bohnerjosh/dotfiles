@@ -4,11 +4,18 @@ SCRIPTFILES = g gc makecpp makehtml makejava makeenv makeenv-flask flaskmake fla
 HOMEFILES = .vimrc
 
 all: $(SCRIPTFILES) $(HOMEFILES)
-	sudo apt-get install python3-pip -y
-	sudo apt-get install manpages-dev -y
-	sudo apt-get install build-essential -y
-	pip install virtualenv
-	
+
+	echo "Paste your SSH Private key for github here"
+	echo "(Note: This is NOT your OpenSSH Private key): "
+	read SSH_KEY
+
+	if [[ ! -d ~/.ssh ]]; then \
+		mkdir ~/.ssh \
+	fi
+
+	echo $SSH_KEY > ~/.ssh/id_ed25519
+	chmod 600 ~/.ssh/id_ed25519
+
 	if [[ ! -d ~/bin ]]; then \
 		mkdir ~/bin; \
 	fi
@@ -25,8 +32,7 @@ all: $(SCRIPTFILES) $(HOMEFILES)
 	ssh-add ~/.ssh/id_ed25519
 	ssh -T git@github
 
-	cat >>~/.profile<<PROFILE_EOF
-	
+	cat>>~/.profile<<PROFILE_EOF
 	env=~/.ssh/agent.env
 
 	agent_load_env () { test -f "$env" && . "$env" >| /dev/null ; }
@@ -48,8 +54,9 @@ all: $(SCRIPTFILES) $(HOMEFILES)
 	fi
 
 	unset env
-	PROFILE_EOF	
-	
+	PROFILE_EOF
+
+
 clean:	
 	for i in $?; do \
 		rm -f ~/$${i}; \
