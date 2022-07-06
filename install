@@ -4,6 +4,10 @@ echo "Paste your SSH Private key for github here"
 echo "(Note: This is NOT your OpenSSH Private key): "
 read SSH_KEY
 
+if [[ ! -d "~/.ssh" ]]; then
+    mkdir ~/.ssh
+fi
+
 echo $SSH_KEY > ~/.ssh/id_ed25519
 apt-get update && apt-get upgrade -y && apt-get autoremove && apt-get autoclean
 sudo apt-get install make
