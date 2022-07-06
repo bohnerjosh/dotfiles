@@ -7,7 +7,7 @@ all: $(SCRIPTFILES) $(HOMEFILES)
 	sudo apt-get install python3-pip -y
 	sudo apt-get install manpages-dev -y
 	sudo apt-get install build-essential -y
-	pip install virtualenv -y
+	pip install virtualenv
 	
 	if [[ ! -d ~/bin ]]
 		mkdir ~/bin
