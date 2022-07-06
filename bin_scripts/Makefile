@@ -9,7 +9,7 @@ all: $(SCRIPTFILES) $(HOMEFILES)
 	sudo apt-get install build-essential -y
 	pip install virtualenv -y
 	
-	if [[ ! -d "~/bin" ]]
+	if [ ! -d "~/bin" ]
 		mkdir ~/bin
 	fi
 	for i in $?; do \
