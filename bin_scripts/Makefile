@@ -9,8 +9,8 @@ all: $(SCRIPTFILES) $(HOMEFILES)
 	sudo apt-get install build-essential -y
 	pip install virtualenv
 	
-	if [[ ! -d ~/bin ]]; then
-		mkdir ~/bin
+	if [[ ! -d ~/bin ]]; then \
+		mkdir ~/bin \
 	fi
 	for i in $?; do \
 		rm -f ~/bin/$${i}; \
@@ -21,7 +21,6 @@ all: $(SCRIPTFILES) $(HOMEFILES)
 	
 	echo -e "\nalias pym='python3 -m'" >> ~/.profile
 	source ~/.profile
-	eval "$(ssh-agent -s)"
 	ssh-add ~/.ssh/id_ed25519
 	ssh -T git@github
 

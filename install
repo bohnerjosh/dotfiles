@@ -4,6 +4,8 @@ echo "Paste your SSH Private key for github here"
 echo "(Note: This is NOT your OpenSSH Private key): "
 read SSH_KEY
 
+eval "$(ssh-agent -s)"
+
 if [[ ! -d ~/.ssh ]]; then
     mkdir ~/.ssh
 fi
