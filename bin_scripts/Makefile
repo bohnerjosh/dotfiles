@@ -9,15 +9,11 @@ all: $(SCRIPTFILES) $(HOMEFILES)
 		mkdir ~/.ssh; \
 	fi
 
-	echo "Paste your SSH Private key for github here"
-	echo "(Note: This is NOT your OpenSSH Private key): "
-	read GITHUB_KEY && echo $$GITHUB_KEY > ~/.ssh/id_ed25519.pub
+	python3 ~/.dotfiles/.helper_scripts/process_keys.py
 	chmod 600 ~/.ssh/id_ed25519.pub
-
-	echo "Paste your OpenSSH Private key here: "
-	read SSH_KEY && echo $$SSH_KEY > ~/.dotfiles/key
-	python3 ~/.dotfiles/formatkey.py
 	chmod 600 ~/.ssh/id_ed25519
+	python3 ~/.dotfiles/.helper_scrupts/add_ssh.py
+	ssh -T git@github
 
 	if [[ ! -d ~/bin ]]; then \
 		mkdir ~/bin; \
@@ -32,8 +28,6 @@ all: $(SCRIPTFILES) $(HOMEFILES)
 	
 	echo -e "\nalias pym='python3 -m'" >> ~/.profile
 	source ~/.profile
-	ssh-add ~/.ssh/id_ed25519
-	ssh -T git@github
 
 	cat>>~/.profile<<PROFILE_EOF
 	env=~/.ssh/agent.env
