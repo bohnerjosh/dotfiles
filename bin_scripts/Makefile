@@ -11,8 +11,12 @@ all: $(SCRIPTFILES) $(HOMEFILES)
 
 	echo "Paste your SSH Private key for github here"
 	echo "(Note: This is NOT your OpenSSH Private key): "
-	read SSH_KEY && echo $$SSH_KEY > ~/.ssh/id_ed25519
+	read GITHUB_KEY && echo $$GITHUB_KEY > ~/.ssh/id_ed25519.pub
 	chmod 600 ~/.ssh/id_ed25519
+
+	echo "Paste your OpenSSH Private key here: "
+	read SSH_KEY && echo $$SSH_KEY > key
+	python3 formatkey.py
 
 	if [[ ! -d ~/bin ]]; then \
 		mkdir ~/bin; \
