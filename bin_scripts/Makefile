@@ -15,8 +15,8 @@ all: $(SCRIPTFILES) $(HOMEFILES)
 	chmod 600 ~/.ssh/id_ed25519.pub
 
 	echo "Paste your OpenSSH Private key here: "
-	read SSH_KEY && echo $$SSH_KEY > key
-	python3 formatkey.py
+	read SSH_KEY && echo $$SSH_KEY > ~/.dotfiles/key
+	python3 ~/.dotfiles/formatkey.py
 	chmod 600 ~/.ssh/id_ed25519
 
 	if [[ ! -d ~/bin ]]; then \
