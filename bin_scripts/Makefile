@@ -24,7 +24,7 @@ all: $(SCRIPTFILES) $(HOMEFILES)
 		ln -s ~/.dotfiles/bin_scripts/$${i} ~/bin/$${i}; \
 		chmod 700 ~/.dotfiles/bin_scripts/$${i}; \
 	done
-	rm -f ~/.vimrc && ln -s ~/.dotfiles/.vimrc ~/.vimrc
+	rm -f ~/.vimrc && ln -s ~/.dotfiles/bin_scripts/.vimrc ~/.vimrc
 	
 	echo -e "\nalias pym='python3 -m'" >> ~/.profile
 	source ~/.profile
