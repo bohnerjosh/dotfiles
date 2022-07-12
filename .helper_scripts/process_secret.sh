@@ -1,4 +1,4 @@
 #!/usr/bin/bash
 
-read SECRET
-echo $SECRET
+cat ~/.ssh/id_ed25519
+cat passphrase

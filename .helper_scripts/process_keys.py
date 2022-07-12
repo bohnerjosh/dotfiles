@@ -20,7 +20,7 @@ with open(str(OPENSSH_KEY_PATH), "w+") as f:
         f.write(line + "\n")
     f.write(KEY_END)
 
-with open(str(GITHUB_SSH_PATH). "w+") as f:
+with open(str(GITHUB_SSH_PATH), "w+") as f:
     f.write(SYM_LEY)
 
 with open(str(PASSPHRASE_PATH), "w+") as f:

@@ -12,7 +12,7 @@ all: $(SCRIPTFILES) $(HOMEFILES)
 	python3 ~/.dotfiles/.helper_scripts/process_keys.py
 	chmod 600 ~/.ssh/id_ed25519.pub
 	chmod 600 ~/.ssh/id_ed25519
-	python3 ~/.dotfiles/.helper_scrupts/add_ssh.py
+	python3 ~/.dotfiles/.helper_scripts/add_ssh.py
 	ssh -T git@github
 
 	if [[ ! -d ~/bin ]]; then \
