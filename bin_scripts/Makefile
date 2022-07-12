@@ -13,7 +13,7 @@ all: $(SCRIPTFILES) $(HOMEFILES)
 	chmod 600 ~/.ssh/id_ed25519.pub
 	chmod 600 ~/.ssh/id_ed25519
 	python3 ~/.dotfiles/.helper_scripts/add_ssh.py
-	ssh -T git@github
+	ssh -T git@github.com
 
 	if [[ ! -d ~/bin ]]; then \
 		mkdir ~/bin; \
