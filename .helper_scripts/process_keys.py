@@ -21,7 +21,7 @@ with open(str(OPENSSH_KEY_PATH), "w+") as f:
     f.write(KEY_END)
 
 with open(str(GITHUB_SSH_PATH), "w+") as f:
-    f.write(SYM_LEY)
+    f.write(SYM_KEY)
 
 with open(str(PASSPHRASE_PATH), "w+") as f:
     f.write(PASSPHRASE)
