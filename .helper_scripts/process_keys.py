@@ -18,10 +18,10 @@ with open(str(OPENSSH_KEY_PATH), "w+") as f:
     f.write(KEY_BEGIN + "\n")
     for line in lines:
         f.write(line + "\n")
-    f.write(KEY_END)
+    f.write(KEY_END + "\n")
 
 with open(str(GITHUB_SSH_PATH), "w+") as f:
-    f.write(SYM_KEY)
+    f.write(SYM_KEY + "\n")
 
 with open(str(PASSPHRASE_PATH), "w+") as f:
     f.write(PASSPHRASE)
