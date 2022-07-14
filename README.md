@@ -3,17 +3,16 @@
 To use:
 
 `git clone https://github.com/bohnerjosh/dotfiles ~/.dotfiles`
-`cd ~/.dotfiles && make`
+`cd ~/.dotfiles && ./run.sh`
 
 # Instructions for authenticating git
 
-1. clone repository 
-2. Run commands:
-git config --global user.name "<username>"
-git config --global user.email <email>
-git config --global credential.helper store
+1. Enter your Github Username
+2. Enter your Github Email
+3. Enter your SSH Private Key
+4. Enter your SSH Public Key
+5. Enter command below:
 
-3. Make changes to some repository and commit
-4. Enter github credentials (access token)
-5. Run command:
+```
 git config --global credential.helper store
+```
