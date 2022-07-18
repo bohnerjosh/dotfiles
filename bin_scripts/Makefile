@@ -31,6 +31,14 @@ all: $(SCRIPTFILES) $(HOMEFILES)
 
 	~/.dotfiles/.helper_scripts/ssh_access_profile.sh
 
+scripts: $(SCRIPTFILES) $(HOMEFILES)
+	for i in $?; do \
+		rm -f ~/bin/$${i}; \
+		ln -s ~/.dotfiles/bin_scripts/$${i} ~/bin/$${i}; \
+		chmod 700 ~/.dotfiles/bin_scripts/$${i}; \
+	done
+	rm -f ~/.vimrc && ln -s ~/.dotfiles/bin_scripts/.vimrc ~/.vimrc
+
 clean:	
 	for i in $?; do \
 		rm -f ~/$${i}; \
