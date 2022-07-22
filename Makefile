@@ -4,7 +4,7 @@ SCRIPTFILES = gp gc makecpp makehtml makejava makeenv flaskmake flaskrun pss con
 HOMEFILES = .vimrc
 
 all: $(SCRIPTFILES) $(HOMEFILES) 
-	sudo ./.install
+	sudo ~/.dotfiles/.helper_scripts/install
 	~/.dotfiles/.helper_scripts/credential_helper.sh
 
 	if [[ ! -d ~/bin ]]; then \
