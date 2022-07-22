@@ -3,11 +3,9 @@ SHELL=/usr/bin/bash
 SCRIPTFILES = gp gc makecpp makehtml makejava makeenv flaskmake flaskrun pss conn
 HOMEFILES = .vimrc
 
-all: 
-
-	#sudo ./.install
+all: $(SCRIPTFILES) $(HOMEFILES) 
+	sudo ./.install
 	~/.dotfiles/.helper_scripts/credential_helper.sh
-test:
 
 	if [[ ! -d ~/bin ]]; then \
 		mkdir ~/bin; \
