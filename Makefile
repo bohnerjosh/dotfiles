@@ -3,7 +3,7 @@ SHELL=/usr/bin/bash
 SCRIPTFILES = gp gc makecpp makehtml makejava makeenv flaskmake flaskrun pss conn
 HOMEFILES = .vimrc
 
-all: $(SCRIPTFILES) $(HOMEFILES)
+all: 
 
 	#sudo ./.install
 	~/.dotfiles/.helper_scripts/credential_helper.sh
