@@ -1,3 +1,4 @@
+#!/usr/bin/bash
 
 echo "What is your github username? "
 read USERNAME
