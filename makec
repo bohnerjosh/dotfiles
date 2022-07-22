@@ -1,0 +1,16 @@
+#!/bin/bash
+
+if [[ $# -ne 1 ]]; then
+    echo "Usage: $0 <filename>"
+    exit 1
+fi
+cat >$1.c <<EOF
+#include <stdio.h>
+
+int main() {
+     printf("hello world!\n");
+
+}
+EOF
+echo "Made $1.c & compiled: "
+gcc $1.c -o $1 && ./$1
