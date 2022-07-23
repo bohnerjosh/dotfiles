@@ -6,4 +6,6 @@ sudo apt-get install git
 sudo apt-get install python3-pip -y
 sudo apt-get install manpages-dev -y
 sudo apt-get install build-essential -y
+sudo apt-get install gcc-multilib
+sudo apt-get install g++-multilib
 pip install virtualenv
