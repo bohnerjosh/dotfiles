@@ -5,6 +5,7 @@ set visualbell
 set number
 set background=dark
 set mouse=a
+set ambw=double
 set makeprg=make\ -f\ ~/.dotfiles/.vim_custom/Makefile
 command CC :make makec FILENAME=%
 command CCT :make makecthreaded FILENAME=%
