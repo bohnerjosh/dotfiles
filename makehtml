@@ -3,52 +3,24 @@
 touch $1.html
 touch main.css
 touch main.js
-line1="<!DOCTYPE HTML>"
-line2="<html>"
-line21=""
-line3="    <head>"
-line4="        <title>FIXME</title>"
-line5='        <link rel="stylesheet" type="text/css" href="main.css">'
-linenou='      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">'
-line6="    </head>"
-line7=""
-line8="    <body>"
-line9="        <h1>This is a title</h1>"
-line10=""
-line11='       <div id="main-content">'
-line12="           <p>This is a paragraph</p>"
-line13=""
-line14="       </div>"
-line145=""
-line15="   </body>"
-line16='       <script src="https://code.jquery.com/jquery-3.5.1.min.js">'
-line17="       </script>"
-line18=""
-line19='       <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>'
-line20=""
-line21="</html>"
 
-echo "${line1}" >> $1.html
-echo "${line2}" >>$1.html
-echo "${line21}" >> $1.html
-echo "${line3}" >> $1.html
-echo "${line4}" >> $1.html
-echo "${line5}" >> $1.html
-echo "${linenou}" >> $1.html
-echo "${line6}" >> $1.html
-echo "${line7}" >> $1.html
-echo "${line8}" >> $1.html
-echo "${line9}" >> $1.html
-echo "${line10}" >> $1.html
-echo "${line11}" >> $1.html
-echo "${line12}" >> $1.html
-echo "${line13}" >> $1.html
-echo "${line14}" >> $1.html
-echo "${line145}" >> $1.html
-echo "${line15}" >> $1.html
-echo "${line16}" >> $1.html
-echo "${line17}" >> $1.html
-echo "${line18}" >> $1.html
-echo "${line19}" >> $1.html
-echo "${line20}" >> $1.html
-echo "${line21}" >> $1.html
+cat >> $1.html << EOF
+<html>
+    <head>
+        <title>FIXME</title>
+        <link rel="stylesheet" type="text/css" href="main.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    </head>
+    <body>
+        <div id="main-content">
+            <h1>Hello World!</h1>
+        </div>
+    </body> 
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
+</html>
+EOF
+echo "created $1.html"
