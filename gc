@@ -4,15 +4,17 @@ if [[ $# == 2 ]]
 then
     if [[ -e $2.c ]]
     then
-        if [[ $1 == "-m32" ]]
+        if [[ $1 == "-m64" ]]
         then
             echo $2
-            gcc $2.c -m32 -g -o $2 && ./$2
+            gcc $2.c -g -o $2 && ./$2
         else if [[ $1 == "-lp" ]]
         then
             gcc $2.c -lpthread -g -o $2 && ./$2
         else
             echo "invalid argument at position 1: $1"
+            echo "usage: gc <filename> <args>"
+            echo "  where <args> is '-m64' or '-lp'"
         fi
     fi
     else
@@ -20,10 +22,12 @@ then
     fi
 else if [[ -e $1.c ]]
 then 
-    gcc $1.c -g -o $1 && ./$1
+    gcc $1.c -m32 -g -o $1 && ./$1
 
 else
     echo "sorry, $1.c does not exist"
-    echo "usage: -m32 -lp"
+    echo "usage: "
+    echo "  gc <filename> <args>"
+    echo "  where <args> is '-m64' or '-lp'"
 fi
 fi
