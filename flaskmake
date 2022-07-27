@@ -25,9 +25,9 @@ ENV_EOF
 
 source .env
 pip install flask
-pip install Flask-SQLAlchemy==2.4.4
-pip install SQLAlchemy==1.3.23
-pip install requests==2.25.1
+pip install Flask-SQLAlchemy
+pip install SQLAlchemy
+pip install requests
 pip install pytest
 
 cat >models.py <<MODELS_EOF
