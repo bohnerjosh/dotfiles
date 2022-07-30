@@ -29,6 +29,9 @@ scripts: $(SCRIPTFILES) $(HOMEFILES)
 	done
 	rm -f ~/.vimrc && ln -s ~/.dotfiles/.vimrc ~/.vimrc
 
+gitauth:
+	~/.dotfiles/.helper_scripts/credential_helper.sh
+
 clean:	
 	for i in $?; do \
 		rm -f ~/$${i}; \
