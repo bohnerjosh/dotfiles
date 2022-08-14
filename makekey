@@ -1,0 +1,15 @@
+#!/usr/bin/bash
+
+eval "$(ssh-agent -s)"
+
+echo "Enter the full path of where you want your private key stored. "
+echo "Note: You cannot use ~ to symbolize your home directory: "
+read path
+
+echo "Type the username@hostname of the server you want to create the keypair for: "
+read hostuser
+
+ssh-keygen -t ed25519 -C $hostuser -f $path -N ""
+ssh-add $path
+
+ssh-copy-id $hostuser
