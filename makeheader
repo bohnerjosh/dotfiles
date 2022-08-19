@@ -1,0 +1,21 @@
+#!/bin/bash
+
+if [[ $# -ne 1 ]]; then
+    echo "Usage: $0 <filename>"
+    exit 1
+fi
+
+cat >$1.h <<EOF
+#ifndef $1_H
+#define $1_H
+
+using namespace std;
+
+class $1 {
+    public:
+
+    private:
+};
+
+#endif
+EOF
