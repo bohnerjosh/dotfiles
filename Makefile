@@ -1,6 +1,6 @@
 SHELL=/usr/bin/bash
 
-SCRIPTFILES = gp gc makecpp makec makehtml makejava makeenv flaskmake flaskrun pss conn makekey makeheader mpconvert
+SCRIPTFILES = gp gc makecpp makec makehtml makejava makeenv flaskmake flaskrun pss conn makekey makeheader mpconvert netping
 HOMEFILES = .vimrc
 
 install: $(SCRIPTFILES) $(HOMEFILES) 
