@@ -8,4 +8,5 @@ sudo apt-get install manpages-dev -y
 sudo apt-get install build-essential -y
 sudo apt-get install gcc-multilib
 sudo apt-get install g++-multilib
+sudo apt-get install vim
 pip install virtualenv
