@@ -17,7 +17,7 @@ config: $(SCRIPTFILES) $(HOMEFILES)
 	source ~/.profile
 	export PATH=~/bin:${PATH}
 
-scripts:
+scripts $(SCRIPTFILES) $(HOMEFILES):
 	for i in $?; do \ 
 		rm -rf ~/bin/$${i} \
 		ln -s ~/.dotfiles/$${i} ~/bin/$${i}; \
