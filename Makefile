@@ -1,12 +1,9 @@
 SHELL=/usr/bin/bash
 
-SCRIPTFILES = gp gc makecpp makec makehtml makejava makeenv flaskmake flaskrun pss conn makekey makeheader
+SCRIPTFILES = gp gc makecpp makec makehtml makejava makeenv flaskmake flaskrun pss conn makekey makeheader ptest
 HOMEFILES = .vimrc
 
-all: $(SCRIPTFILES) $(HOMEFILES) 
-	sudo ~/.dotfiles/.helper_scripts/install
-	~/.dotfiles/.helper_scripts/credential_helper.sh
-
+config: $(SCRIPTFILES) $(HOMEFILES) 
 	if [[ ! -d ~/bin ]]; then \
 		mkdir ~/bin; \
 	fi
@@ -20,6 +17,11 @@ all: $(SCRIPTFILES) $(HOMEFILES)
 	
 	echo -e "\nalias pym='python3 -m'" >> ~/.profile
 	source ~/.profile
+	export PATH=~/bin:${PATH}
+
+install: $(SCRIPTFILES) $(HOMEFILES) 
+	
+	sudo ~/.dotfiles/.helper_scripts/install
 
 scripts: $(SCRIPTFILES) $(HOMEFILES)
 	for i in $?; do \
@@ -28,6 +30,8 @@ scripts: $(SCRIPTFILES) $(HOMEFILES)
 		chmod 700 ~/.dotfiles/$${i}; \
 	done
 	rm -f ~/.vimrc && ln -s ~/.dotfiles/.vimrc ~/.vimrc
+
+
 
 gitauth:
 	~/.dotfiles/.helper_scripts/credential_helper.sh
