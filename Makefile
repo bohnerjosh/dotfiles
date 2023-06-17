@@ -1,6 +1,5 @@
 SHELL=/usr/bin/bash
-
-SCRIPTFILES = gp gc makecpp makec makehtml makejava makeenv flaskmake flaskrun pss conn makekey makeheader ptest
+SCRIPTFILES = gp gc makecpp makec makehtml makejava makeenv flaskmake flaskrun pss conn makekey makeheader mpconvert netping
 HOMEFILES = .vimrc
 
 config: $(SCRIPTFILES) $(HOMEFILES) 
@@ -9,29 +8,25 @@ config: $(SCRIPTFILES) $(HOMEFILES)
 	fi
 
 	for i in $?; do \
-		rm -f ~/bin/$${i}; \
 		ln -s ~/.dotfiles/$${i} ~/bin/$${i}; \
 		chmod 700 ~/.dotfiles/$${i}; \
 	done
-	rm -f ~/.vimrc && ln -s ~/.dotfiles/.vimrc ~/.vimrc
+	cp ~/.dotfiles/.vimrc ~/.vimrc
 	
 	echo -e "\nalias pym='python3 -m'" >> ~/.profile
 	source ~/.profile
 	export PATH=~/bin:${PATH}
 
-install: $(SCRIPTFILES) $(HOMEFILES) 
-	
-	sudo ~/.dotfiles/.helper_scripts/install
-
-scripts: $(SCRIPTFILES) $(HOMEFILES)
-	for i in $?; do \
-		rm -f ~/bin/$${i}; \
+scripts:
+	for i in $?; do \ 
+		rm -rf ~/bin/$${i} \
 		ln -s ~/.dotfiles/$${i} ~/bin/$${i}; \
 		chmod 700 ~/.dotfiles/$${i}; \
 	done
-	rm -f ~/.vimrc && ln -s ~/.dotfiles/.vimrc ~/.vimrc
+	cp ~/.dotfiles/.vimrc ~/.vimrc
 
-
+install: $(SCRIPTFILES) $(HOMEFILES) 
+	sudo ~/.dotfiles/.helper_scripts/install
 
 gitauth:
 	~/.dotfiles/.helper_scripts/credential_helper.sh
@@ -39,6 +34,4 @@ gitauth:
 clean:	
 	for i in $?; do \
 		rm -f ~/$${i}; \
-		ls -s ~/.dotfiles/$${i} ~/$${i}; \
-		chmod 700 ~/.dotfiles/$${i}; \
     done
